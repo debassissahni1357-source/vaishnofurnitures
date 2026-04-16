@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | Aura Loft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        .filter-bar {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1rem;
+        }
+        .filter-item {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: var(--transition-smooth);
+        }
+        .filter-item:hover, .filter-item.active {
+            color: var(--accent);
+        }
+        .product-card {
+            transition: var(--transition-smooth);
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        .product-image-wrapper {
+            background: var(--bg-secondary);
+            padding: 4rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+        .product-image-wrapper img {
+            max-height: 250px;
+            margin: 0 auto;
+            transition: var(--transition-smooth);
+        }
+        .product-card:hover .product-image-wrapper img {
+            transform: scale(1.05);
+        }
+        .badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav id="main-nav">
+                <a href="index.html" class="logo">VAISHNO<span>FURNITURE</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-extra">
+                    <button id="cart-btn" class="icon-btn">🛒 <span id="cart-count">0</span></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-padding" style="margin-top: 4rem;">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">The Collections</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 4rem;">Curated furniture for every corner of your home.</p>
+
+            <div class="filter-bar">
+                <div class="filter-item active">All</div>
+                <div class="filter-item">Living Room</div>
+                <div class="filter-item">Bedroom</div>
+                <div class="filter-item">Dining</div>
+                <div class="filter-item">Workspace</div>
+            </div>
+
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/navy_sofa.jpg" alt="Royal Navy Sofa">
+                    </div>
+                    <div class="product-info">
+                        <h3>Royal Navy Velvet Sofa</h3>
+                        <p>Exquisite vertical pleating and polished gold accents. A masterpiece of modern luxury.</p>
+                        <span class="price-tag">₹48,500</span>
+                        <button class="btn btn-filled" onclick="addToCart('Royal Navy Velvet Sofa', '₹48,500', 'assets/navy_sofa.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/pink_sofa.jpg" alt="Rose Sectional">
+                    </div>
+                    <div class="product-info">
+                        <h3>Velvet Rose Sectional</h3>
+                        <p>Expansive modular design with channel-tufted velvet and versatile ottoman blocks.</p>
+                        <span class="price-tag">₹62,000</span>
+                        <button class="btn btn-filled" onclick="addToCart('Velvet Rose Sectional', '₹62,000', 'assets/pink_sofa.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/luxury_bed.jpg" alt="Luxury Bed">
+                    </div>
+                    <div class="product-info">
+                        <h3>Diamond Master Bed</h3>
+                        <p>Grand headboard with blue velvet accents and integrated nightstands. Pure comfort.</p>
+                        <span class="price-tag">₹54,000</span>
+                        <button class="btn btn-filled" onclick="addToCart('Diamond Master Bed', '₹54,000', 'assets/luxury_bed.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/teal_sectional.jpg" alt="Teal Sectional">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ocean Teal L-Suite</h3>
+                        <p>Vibrant teal upholstery with gold-tipped legs. A bold statement for any living area.</p>
+                        <span class="price-tag">₹58,500</span>
+                        <button class="btn btn-filled" onclick="addToCart('Ocean Teal L-Suite', '₹58,500', 'assets/teal_sectional.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/black_sofa.jpg" alt="Black Velvet Sofa">
+                    </div>
+                    <div class="product-info">
+                        <h3>Midnight Onyx Sofa</h3>
+                        <p>Deep black velvet with vertical channel tufting and luxury gold base.</p>
+                        <span class="price-tag">₹42,000</span>
+                        <button class="btn btn-filled" onclick="addToCart('Midnight Onyx Sofa', '₹42,000', 'assets/black_sofa.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/brown_sectional_2.jpg" alt="Mocha Sectional">
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Mocha Sectional</h3>
+                        <p>Deep-seated comfort with integrated cupholders and premium fabric finish.</p>
+                        <span class="price-tag">₹65,000</span>
+                        <button class="btn btn-filled" onclick="addToCart('Classic Mocha Sectional', '₹65,000', 'assets/brown_sectional_2.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/teal_loveseat.jpg" alt="Teal Loveseat">
+                    </div>
+                    <div class="product-info">
+                        <h3>Azure Compact Sofa</h3>
+                        <p>Elegant two-seater with gold trim accents. Perfect for smaller spaces.</p>
+                        <span class="price-tag">₹32,000</span>
+                        <button class="btn btn-filled" onclick="addToCart('Azure Compact Sofa', '₹32,000', 'assets/teal_loveseat.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/wooden_chair.jpg" alt="Wooden Chair">
+                    </div>
+                    <div class="product-info">
+                        <h3>Heritage Teak Chair</h3>
+                        <p>Hand-finished teak wood with premium padding. Timeless dining elegance.</p>
+                        <span class="price-tag">₹4,500</span>
+                        <button class="btn btn-filled" onclick="addToCart('Heritage Teak Chair', '₹4,500', 'assets/wooden_chair.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/brown_sectional.jpg" alt="Brown Suite">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tobacco Floral Suite</h3>
+                        <p>Rich brown sectional featuring beautiful floral-patterned accent pillows.</p>
+                        <span class="price-tag">₹68,500</span>
+                        <button class="btn btn-filled" onclick="addToCart('Tobacco Floral Suite', '₹68,500', 'assets/brown_sectional.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/plastic_chairs.jpg" alt="Plastic Chairs">
+                    </div>
+                    <div class="product-info">
+                        <h3>Utility Comfort Set</h3>
+                        <p>Classic wood-grain durable plastic chairs. Versatile and reliable.</p>
+                        <span class="price-tag">₹1,200</span>
+                        <button class="btn btn-filled" onclick="addToCart('Utility Comfort Set', '₹1,200', 'assets/plastic_chairs.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card-real">
+                    <div class="product-img-container">
+                        <img src="assets/showroom_1.jpg" alt="Showroom Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Signature Showroom Set</h3>
+                        <p>A curated mix of our premium traditional and modern sofa designs.</p>
+                        <span class="price-tag">₹25,000</span>
+                        <button class="btn btn-filled" onclick="addToCart('Signature Showroom Set', '₹25,000', 'assets/showroom_1.jpg')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">VAISHNO<span>FURNITURE</span></a>
+                    <p>Bringing elegance and comfort to every home since 1995.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="products.html">Living Room</a></li>
+                        <li><a href="products.html">Bedroom</a></li>
+                        <li><a href="products.html">Dining Room</a></li>
+                        <li><a href="products.html">Workspace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="contact.html">Lanka, Varanasi, UP</a></li>
+                        <li><a href="mailto:contact@vaishnofurniture.com">contact@vaishno.com</a></li>
+                        <li><a href="tel:+911234567890">+91 123 456 7890</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vaishno Furniture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items-container">
+            <!-- Items added via JS -->
+            <p style="text-align: center; color: var(--text-secondary); margin-top: 2rem;">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-filled" style="width: 100%;">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div id="payment-step-1">
+                <div class="modal-header">
+                    <h3>Secure Checkout</h3>
+                    <button id="close-payment">&times;</button>
+                </div>
+                <div class="payment-options">
+                    <div class="payment-method active" data-method="upi">
+                        <span>UPI / QR Code</span>
+                    </div>
+                    <div class="payment-method" data-method="card">
+                        <span>Debit / Credit Card</span>
+                    </div>
+                </div>
+                <div id="upi-section" class="payment-details">
+                    <div style="text-align: center;">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=vaishno@upi&pn=Vaishno%20Furniture&am=0" alt="UPI QR">
+                        <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.8rem;">Scan to pay using any UPI app</p>
+                    </div>
+                </div>
+                <button id="confirm-pay-btn" class="btn btn-filled" style="width: 100%; margin-top: 2rem;">Confirm Payment</button>
+            </div>
+            
+            <div id="payment-success" style="display: none; text-align: center; padding: 2rem;">
+                <div style="font-size: 4rem; color: #27ae60; margin-bottom: 1rem;">✓</div>
+                <h2>Order Placed!</h2>
+                <p style="color: var(--text-secondary); margin: 1rem 0 2rem;">Thank you for shopping with Vaishno Furniture. Your order ID is #VF-2026</p>
+                <button id="continue-shopping" class="btn btn-filled">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

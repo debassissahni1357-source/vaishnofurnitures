@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishno Furniture | Official Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #161616;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #c4a484;
+            --accent-hover: #d4b494;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4, .logo { font-family: 'Playfair Display', serif; font-weight: 400; }
+        a { text-decoration: none; color: inherit; transition: var(--transition-smooth); cursor: pointer; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        .section-padding { padding: 8rem 0; }
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border); background: rgba(10, 10, 10, 0.8); }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; letter-spacing: 4px; text-transform: uppercase; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 3rem; }
+        .nav-links a { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; color: var(--text-secondary); }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        .hero { height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; }
+        .hero-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.6); }
+        .hero-content { max-width: 800px; }
+        .hero h1 { font-size: 5rem; line-height: 1.1; margin-bottom: 2rem; }
+        .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; }
+        .btn { display: inline-block; padding: 1.2rem 3rem; border: 1px solid var(--accent); color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 600; transition: var(--transition-smooth); position: relative; overflow: hidden; z-index: 1; border-radius: 0; background: transparent; cursor: pointer; text-align: center; }
+        .btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--accent); transition: var(--transition-smooth); z-index: -1; }
+        .btn:hover { color: var(--bg-primary); }
+        .btn:hover::after { left: 0; }
+        .btn-filled { background: var(--accent); color: var(--bg-primary); }
+        .btn-filled:hover { background: var(--accent-hover); }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 3rem; }
+        .product-card-real { background: var(--bg-secondary); border: 1px solid var(--glass-border); padding: 1.5rem; transition: var(--transition-smooth); display: flex; flex-direction: column; }
+        .product-card-real:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .product-img-container { height: 300px; overflow: hidden; margin-bottom: 2rem; position: relative; background: #1a1a1a; }
+        .product-img-container img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth); }
+        .product-card-real:hover .product-img-container img { transform: scale(1.05); }
+        .product-info h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .product-info p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4; }
+        .price-tag { color: var(--accent); font-weight: 600; font-size: 1.1rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .gallery-item { position: relative; overflow: hidden; background: var(--bg-secondary); }
+        .gallery-item.large { grid-column: span 2; }
+        .gallery-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 3rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); transition: var(--transition-smooth); }
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; }
+        .form-group { margin-bottom: 2.5rem; }
+        .form-group label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 0.8rem; }
+        input, textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--glass-border); color: var(--text-primary); padding: 0.8rem 0; font-family: inherit; font-size: 1rem; }
+        .cart-sidebar { position: fixed; top: 0; right: -400px; width: 400px; height: 100vh; background: var(--bg-primary); border-left: 1px solid var(--glass-border); z-index: 1001; transition: var(--transition-smooth); display: flex; flex-direction: column; }
+        .cart-sidebar.active { right: 0; }
+        .cart-header { padding: 2rem; border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center; }
+        .cart-items-container { flex: 1; padding: 2rem; overflow-y: auto; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 2000; display: none; justify-content: center; align-items: center; }
+        .modal-content { background: var(--bg-secondary); border: 1px solid var(--glass-border); width: 90%; max-width: 500px; padding: 3rem; border-radius: 4px; }
+        .page-content { display: none; margin-top: 4rem; }
+        .page-content.active { display: block; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition-smooth); }
+        .reveal-visible { opacity: 1 !important; transform: translateY(0) !important; }
+        footer { padding: 5rem 0 2rem; background: var(--bg-secondary); border-top: 1px solid var(--glass-border); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a onclick="navigateTo('home')" class="logo">VAISHNO<span>FURNITURE</span></a>
+                <ul class="nav-links">
+                    <li><a onclick="navigateTo('home')" id="nav-home" class="active">Home</a></li>
+                    <li><a onclick="navigateTo('products')" id="nav-products">Products</a></li>
+                    <li><a onclick="navigateTo('gallery')" id="nav-gallery">Gallery</a></li>
+                    <li><a onclick="navigateTo('about')" id="nav-about">About</a></li>
+                    <li><a onclick="navigateTo('contact')" id="nav-contact">Contact</a></li>
+                </ul>
+                <div class="nav-extra">
+                    <button id="cart-btn" class="icon-btn" style="background:none; border:none; color:white; cursor:pointer; font-size:1.2rem;">🛒 <span id="cart-count">0</span></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- HOME -->
+        <div id="page-home" class="page-content active">
+            <section class="hero">
+                <img src="assets/hero.png" class="hero-img">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Exceptional Design <br> For Modern Living</h1>
+                        <p>Experience the perfect harmony of craftsmanship and comfort. Discover our curated collection at Vaishno Furniture.</p>
+                        <div class="hero-btns">
+                            <a onclick="navigateTo('products')" class="btn btn-filled">Explore Collection</a>
+                            <a onclick="navigateTo('about')" class="btn">Our Philosophy</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-padding reveal">
+                <div class="container" style="text-align:center;">
+                    <h2 style="font-size:3rem; margin-bottom:4rem;">Featured Pieces</h2>
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(350px, 1fr)); gap:4rem;">
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/navy_sofa.jpg"></div><div class="product-info"><h3>Royal Navy Sofa</h3><span class="price-tag">₹48,500</span></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/luxury_bed.jpg"></div><div class="product-info"><h3>Diamond Master Bed</h3><span class="price-tag">₹54,000</span></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/teal_sectional.jpg"></div><div class="product-info"><h3>Ocean Teal L-Suite</h3><span class="price-tag">₹58,500</span></div></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div id="page-products" class="page-content">
+            <section class="section-padding">
+                <div class="container">
+                    <h1 style="font-size:3rem; margin-bottom:1rem;">The Collections</h1>
+                    <p style="color:var(--text-secondary); margin-bottom:4rem;">Curated furniture for every corner of your home.</p>
+                    <div class="product-grid">
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/navy_sofa.jpg"></div><div class="product-info"><h3>Royal Navy Velvet Sofa</h3><p>Exquisite vertical pleating and polished gold accents. A masterpiece of modern luxury.</p><span class="price-tag">₹48,500</span><button onclick="addToCart('Royal Navy Velvet Sofa', '₹48,500', 'assets/navy_sofa.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/pink_sofa.jpg"></div><div class="product-info"><h3>Velvet Rose Sectional</h3><p>Expansive modular design with channel-tufted velvet and versatile ottoman blocks.</p><span class="price-tag">₹62,000</span><button onclick="addToCart('Velvet Rose Sectional', '₹62,000', 'assets/pink_sofa.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/luxury_bed.jpg"></div><div class="product-info"><h3>Diamond Master Bed</h3><p>Grand headboard with blue velvet accents and integrated nightstands. Pure comfort.</p><span class="price-tag">₹54,000</span><button onclick="addToCart('Diamond Master Bed', '₹54,000', 'assets/luxury_bed.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/teal_sectional.jpg"></div><div class="product-info"><h3>Ocean Teal L-Suite</h3><p>Vibrant teal upholstery with gold-tipped legs. A bold statement for any living area.</p><span class="price-tag">₹58,500</span><button onclick="addToCart('Ocean Teal L-Suite', '₹58,500', 'assets/teal_sectional.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/black_sofa.jpg"></div><div class="product-info"><h3>Midnight Onyx Sofa</h3><p>Deep black velvet with vertical channel tufting and luxury gold base.</p><span class="price-tag">₹42,000</span><button onclick="addToCart('Midnight Onyx Sofa', '₹42,000', 'assets/black_sofa.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/brown_sectional_2.jpg"></div><div class="product-info"><h3>Classic Mocha Sectional</h3><p>Deep-seated comfort with integrated cupholders and premium fabric finish.</p><span class="price-tag">₹65,000</span><button onclick="addToCart('Classic Mocha Sectional', '₹65,000', 'assets/brown_sectional_2.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/teal_loveseat.jpg"></div><div class="product-info"><h3>Azure Compact Sofa</h3><p>Elegant two-seater with gold trim accents. Perfect for smaller spaces.</p><span class="price-tag">₹32,000</span><button onclick="addToCart('Azure Compact Sofa', '₹32,000', 'assets/teal_loveseat.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/wooden_chair.jpg"></div><div class="product-info"><h3>Heritage Teak Chair</h3><p>Hand-finished teak wood with premium padding. Timeless dining elegance.</p><span class="price-tag">₹4,500</span><button onclick="addToCart('Heritage Teak Chair', '₹4,500', 'assets/wooden_chair.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/brown_sectional.jpg"></div><div class="product-info"><h3>Tobacco Floral Suite</h3><p>Rich brown sectional featuring beautiful floral-patterned accent pillows.</p><span class="price-tag">₹68,500</span><button onclick="addToCart('Tobacco Floral Suite', '₹68,500', 'assets/brown_sectional.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/plastic_chairs.jpg"></div><div class="product-info"><h3>Utility Comfort Set</h3><p>Classic wood-grain durable plastic chairs. Versatile and reliable.</p><span class="price-tag">₹1,200</span><button onclick="addToCart('Utility Comfort Set', '₹1,200', 'assets/plastic_chairs.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                        <div class="product-card-real"><div class="product-img-container"><img src="assets/showroom_1.jpg"></div><div class="product-info"><h3>Signature Showroom Set</h3><p>A curated mix of our premium traditional and modern sofa designs.</p><span class="price-tag">₹25,000</span><button onclick="addToCart('Signature Showroom Set', '₹25,000', 'assets/showroom_1.jpg')" class="btn btn-filled">Add to Cart</button></div></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- GALLERY -->
+        <div id="page-gallery" class="page-content">
+            <section class="section-padding">
+                <div class="container">
+                    <h1 style="font-size:3rem; margin-bottom:1rem;">Furniture In Situ</h1>
+                    <p style="color:var(--text-secondary); margin-bottom:4rem;">A curated selection of our favorite interior spaces featuring Vaishno Furniture pieces.</p>
+                    <div class="gallery-grid">
+                        <div class="gallery-item large" style="height:600px; background:url('assets/showroom_1.jpg') center/cover;"><div class="gallery-overlay"><h3>Our Flagship Showroom</h3><p>Experience the complete collection in person in Varanasi.</p></div></div>
+                        <div class="gallery-item" style="height:400px; background:url('assets/pink_sofa.jpg') center/cover;"><div class="gallery-overlay"><h3>Pastel Tones</h3><p>Bringing warmth and texture to the living space.</p></div></div>
+                        <div class="gallery-item" style="height:400px; background:url('assets/brown_sectional_2.jpg') center/cover;"><div class="gallery-overlay"><h3>The Comfort Hub</h3><p>Deep seating designed for family movie nights.</p></div></div>
+                        <div class="gallery-item large" style="height:500px; background:url('assets/black_sofa.jpg') center/cover;"><div class="gallery-overlay"><h3>Midnight Onyx Showcase</h3><p>Sophisticated dark aesthetics and luxury finishes.</p></div></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ABOUT -->
+        <div id="page-about" class="page-content">
+            <section class="section-padding">
+                <div class="container" style="text-align:center;">
+                    <span style="text-transform:uppercase; letter-spacing:4px; color:var(--accent); font-size:0.8rem;">Founded 1995 | Varanasi</span>
+                    <h1 style="font-size:4rem; margin:1.5rem 0 3rem;">Philosophy of Comfort</h1>
+                    <p style="font-size:1.2rem; color:var(--text-secondary); max-width:800px; margin:0 auto 4rem; line-height:2;">Vaishno Furniture was born in the heart of Varanasi out of a desire to blend traditional craftsmanship with modern comfort. We believe that a well-designed home is the foundation of a peaceful life.</p>
+                    <img src="assets/about.png" style="width:100%; height:600px; object-fit:cover; border:1px solid var(--glass-border);">
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTACT -->
+        <div id="page-contact" class="page-content">
+            <section class="section-padding">
+                <div class="container">
+                    <div class="contact-container">
+                        <div>
+                            <h1>Let's Begin Your Journey</h1>
+                            <div style="margin-top:3rem;">
+                                <div class="form-group"><label>Full Name</label><input type="text" placeholder="John Doe"></div>
+                                <div class="form-group"><label>Email Address</label><input type="email" placeholder="john@example.com"></div>
+                                <div class="form-group"><label>Your Inquiry</label><textarea rows="5" placeholder="Tell us about your project..."></textarea></div>
+                                <button class="btn btn-filled" style="width:100%;">Send Inquiry</button>
+                            </div>
+                        </div>
+                        <div style="padding-top:4rem;">
+                            <div style="margin-bottom:4rem;"><h3>Our Showroom</h3><p style="color:var(--text-secondary); line-height:2;">Lanka, Varanasi<br>Uttar Pradesh, 221005</p></div>
+                            <div style="margin-bottom:4rem;"><h3>Contact</h3><p style="color:var(--text-secondary); line-height:2;">contact@vaishno.com<br>+91 123 456 7890</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about"><a onclick="navigateTo('home')" class="logo">VAISHNO<span>FURNITURE</span></a><p>Bringing elegance and comfort to every home since 1995.</p></div>
+                <div class="footer-col"><h4>Collections</h4><ul><li><a onclick="navigateTo('products')">Living Room</a></li><li><a onclick="navigateTo('products')">Bedroom</a></li><li><a onclick="navigateTo('products')">Dining</a></li></ul></div>
+                <div class="footer-col"><h4>Contact Us</h4><ul><li><a onclick="navigateTo('contact')">Lanka, Varanasi, UP</a></li><li><a href="mailto:contact@vaishno.com">Email Us</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Vaishno Furniture. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <!-- SHARED UI -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header"><h3>Your Cart</h3><button id="close-cart" style="background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">&times;</button></div>
+        <div id="cart-items" class="cart-items-container"></div>
+        <div class="cart-footer"><div class="cart-total"><span>Total:</span><span id="cart-total-amount">₹0</span></div><button id="checkout-btn" class="btn btn-filled" style="width: 100%;">Checkout</button></div>
+    </div>
+    <div id="payment-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div id="payment-step-1">
+                <div style="display:flex; justify-content:space-between;"><h3>Secure Checkout</h3><button id="close-payment" style="background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">&times;</button></div>
+                <div style="text-align:center; padding:2rem;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=vaishno@upi" style="margin:0 auto;"><p style="margin-top:1rem; font-size:0.8rem; color:var(--text-secondary);">Scan to pay with UPI</p></div>
+                <button id="confirm-pay-btn" class="btn btn-filled" style="width:100%;">Confirm Payment</button>
+            </div>
+            <div id="payment-success" style="display:none; text-align:center; padding:2rem;"><h2>Order Placed!</h2><p>Thank you for shopping with Vaishno Furniture.</p><button id="continue-shopping" class="btn btn-filled" style="margin-top:2rem;">Continue Shopping</button></div>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+            document.getElementById('page-' + pageId).classList.add('active');
+            const navLink = document.getElementById('nav-' + pageId);
+            if(navLink) navLink.classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        let cart = JSON.parse(localStorage.getItem('vf-cart')) || [];
+        function updateCartCount() { document.getElementById('cart-count').innerText = cart.length; }
+        function saveCart() { localStorage.setItem('vf-cart', JSON.stringify(cart)); updateCartCount(); renderCart(); }
+        function addToCart(name, price, img) { cart.push({ name, price, img, id: Date.now() }); saveCart(); openCart(); }
+        function removeFromCart(id) { cart = cart.filter(item => item.id !== id); saveCart(); }
+        function renderCart() {
+            const container = document.getElementById('cart-items');
+            const totalElement = document.getElementById('cart-total-amount');
+            if(!container) return;
+            if(cart.length === 0) { container.innerHTML = '<p style="text-align:center; color:var(--text-secondary); margin-top:2rem;">Your cart is empty.</p>'; totalElement.innerText = '₹0'; return; }
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                total += parseInt(item.price.replace(/[^\d]/g, ''));
+                return `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:1rem;"><div><h4>${item.name}</h4><span style="color:var(--accent); font-size:0.8rem;">${item.price}</span></div><button onclick="removeFromCart(${item.id})" style="background:none; border:none; color:#ff4d4d; cursor:pointer;">&times;</button></div>`;
+            }).join('');
+            totalElement.innerText = `₹${total.toLocaleString()}`;
+        }
+        function openCart() { document.getElementById('cart-sidebar').classList.add('active'); }
+        function closeCart() { document.getElementById('cart-sidebar').classList.remove('active'); }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount(); renderCart();
+            document.getElementById('cart-btn').onclick = openCart;
+            document.getElementById('close-cart').onclick = closeCart;
+            document.getElementById('checkout-btn').onclick = () => { if(cart.length > 0) document.getElementById('payment-modal').style.display='flex'; closeCart(); };
+            document.getElementById('close-payment').onclick = () => document.getElementById('payment-modal').style.display='none';
+            document.getElementById('confirm-pay-btn').onclick = () => {
+                document.getElementById('confirm-pay-btn').innerText = 'Processing...';
+                setTimeout(() => {
+                    document.getElementById('payment-step-1').style.display='none';
+                    document.getElementById('payment-success').style.display='block';
+                    cart = []; saveCart();
+                }, 2000);
+            };
+            document.getElementById('continue-shopping').onclick = () => {
+                document.getElementById('payment-modal').style.display='none';
+                document.getElementById('payment-step-1').style.display='block';
+                document.getElementById('payment-success').style.display='none';
+                document.getElementById('confirm-pay-btn').innerText = 'Confirm Payment';
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('reveal-visible'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

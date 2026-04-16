@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Vaishno Furniture</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+        }
+        .form-group {
+            margin-bottom: 2.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+        input, textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            padding: 0.8rem 0;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .info-item {
+            margin-bottom: 4rem;
+        }
+        .info-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .info-item p {
+            color: var(--text-secondary);
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav id="main-nav">
+                <a href="index.html" class="logo">VAISHNO<span>FURNITURE</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="nav-extra">
+                    <button id="cart-btn" class="icon-btn">🛒 <span id="cart-count">0</span></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-padding" style="margin-top: 4rem;">
+        <div class="container">
+            <div class="contact-container">
+                <div>
+                    <h1 style="font-size: 4rem; margin-bottom: 3rem;">Let's Begin Your Journey</h1>
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Inquiry</label>
+                            <textarea id="message" rows="5" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-filled" style="width: 100%;">Send Inquiry</button>
+                    </form>
+                </div>
+                <div class="contact-info" style="padding-top: 5rem;">
+                    <div class="info-item">
+                        <h3>Our Showroom</h3>
+                        <p>Lanka, Varanasi<br>Uttar Pradesh, 221005</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Contact</h3>
+                        <p>contact@vaishnofurniture.com<br>+91 123 456 7890</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Opening Hours</h3>
+                        <p>Mon - Fri: 10:00 - 18:00<br>Sat - Sun: 11:00 - 17:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aura Loft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

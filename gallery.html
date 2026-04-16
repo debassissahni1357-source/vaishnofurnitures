@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspiration Gallery | Vaishno Furniture</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-secondary);
+        }
+        .gallery-item.large {
+            grid-column: span 2;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+            filter: brightness(0.8);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 3rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav id="main-nav">
+                <a href="index.html" class="logo">VAISHNO<span>FURNITURE</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-extra">
+                    <button id="cart-btn" class="icon-btn">🛒 <span id="cart-count">0</span></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-padding" style="margin-top: 4rem;">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">Furniture In Situ</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 4rem;">A curated selection of our favorite interior spaces featuring Vaishno Furniture pieces.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item large" style="height: 600px; background: url('assets/showroom_1.jpg'); background-size: cover; background-position: center;">
+                    <div class="gallery-overlay" style="opacity: 1; background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                        <h3 style="color: var(--accent);">Our Flagship Showroom</h3>
+                        <p style="font-size: 0.9rem;">Experience the complete Vaishno Furniture collection in person in Varanasi.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="height: 400px; background: url('assets/pink_sofa.jpg'); background-size: cover; background-position: center;">
+                    <div class="gallery-overlay" style="opacity: 1; background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                        <h3 style="color: var(--accent);">Pastel Tones</h3>
+                        <p style="font-size: 0.9rem;">Bringing warmth and texture to the living space.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="height: 400px; background: url('assets/brown_sectional_2.jpg'); background-size: cover; background-position: center;">
+                    <div class="gallery-overlay" style="opacity: 1; background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                        <h3 style="color: var(--accent);">The Comfort Hub</h3>
+                        <p style="font-size: 0.9rem;">Deep seating designed for family movie nights.</p>
+                    </div>
+                </div>
+                <div class="gallery-item large" style="height: 500px; background: url('assets/black_sofa.jpg'); background-size: cover; background-position: center;">
+                    <div class="gallery-overlay" style="opacity: 1; background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                        <h3 style="color: var(--accent);">Midnight Onyx Showcase</h3>
+                        <p style="font-size: 0.9rem;">Sophisticated dark aesthetics and luxury finishes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">VAISHNO<span>FURNITURE</span></a>
+                    <p>Bringing elegance and comfort to every home since 1995.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="products.html">Living Room</a></li>
+                        <li><a href="products.html">Bedroom</a></li>
+                        <li><a href="products.html">Dining Room</a></li>
+                        <li><a href="products.html">Workspace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="contact.html">Lanka, Varanasi, UP</a></li>
+                        <li><a href="mailto:contact@vaishnofurniture.com">contact@vaishno.com</a></li>
+                        <li><a href="tel:+911234567890">+91 123 456 7890</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vaishno Furniture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items-container">
+            <p style="text-align: center; color: var(--text-secondary); margin-top: 2rem;">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-filled" style="width: 100%;">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div id="payment-step-1">
+                <div class="modal-header">
+                    <h3>Secure Checkout</h3>
+                    <button id="close-payment">&times;</button>
+                </div>
+                <div class="payment-options">
+                    <div class="payment-method active" data-method="upi">
+                        <span>UPI / QR Code</span>
+                    </div>
+                    <div class="payment-method" data-method="card">
+                        <span>Debit / Credit Card</span>
+                    </div>
+                </div>
+                <div id="upi-section" class="payment-details">
+                    <div style="text-align: center;">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=vaishno@upi&pn=Vaishno%20Furniture&am=0" alt="UPI QR">
+                        <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.8rem;">Scan to pay using any UPI app</p>
+                    </div>
+                </div>
+                <button id="confirm-pay-btn" class="btn btn-filled" style="width: 100%; margin-top: 2rem;">Confirm Payment</button>
+            </div>
+            
+            <div id="payment-success" style="display: none; text-align: center; padding: 2rem;">
+                <div style="font-size: 4rem; color: #27ae60; margin-bottom: 1rem;">✓</div>
+                <h2>Order Placed!</h2>
+                <p style="color: var(--text-secondary); margin: 1rem 0 2rem;">Thank you for shopping with Vaishno Furniture. Your order ID is #VF-2026</p>
+                <button id="continue-shopping" class="btn btn-filled">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

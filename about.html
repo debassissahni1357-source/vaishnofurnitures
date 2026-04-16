@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Vaishno Furniture</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav id="main-nav">
+                <a href="index.html" class="logo">VAISHNO<span>FURNITURE</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-extra">
+                    <button id="cart-btn" class="icon-btn">🛒 <span id="cart-count">0</span></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-padding" style="margin-top: 4rem;">
+            <div class="container">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <span style="text-transform: uppercase; letter-spacing: 4px; color: var(--accent); font-size: 0.8rem;">Founded 1995 | Varanasi</span>
+                    <h1 style="font-size: 4rem; margin: 1.5rem 0 3rem;">Philosophy of Comfort</h1>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 2;">Vaishno Furniture was born in the heart of Varanasi out of a desire to blend traditional craftsmanship with modern comfort. We believe that a well-designed home is the foundation of a peaceful life.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <div class="container">
+                <img src="assets/about.png" alt="Aura Loft Workshop" style="width: 100%; height: 600px; object-fit: cover; border: 1px solid var(--glass-border);">
+            </div>
+        </section>
+
+        <section class="section-padding reveal">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8rem;">
+                    <div>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Uncompromising Craft</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Each piece in our collection is the result of years of refinement and artisanal labor. We source only the finest sustainable teak, rosewood, and premium fabrics to ensure every item is a masterpiece.</p>
+                        <p style="color: var(--text-secondary);">From our roots in Lanka, Varanasi, we have expanded to bring our vision of quality and elegance to homes across the country, always staying true to our artisanal heritage.</p>
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 4rem;">
+                            <h3 style="color: var(--accent); margin-bottom: 1rem;">01. Sustainable Sourcing</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">We partner with ethical suppliers who share our commitment to the planet.</p>
+                        </div>
+                        <div style="margin-bottom: 4rem;">
+                            <h3 style="color: var(--accent); margin-bottom: 1rem;">02. Artisanal Excellence</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Our craftsmen combine traditional techniques with modern precision.</p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--accent); margin-bottom: 1rem;">03. Timeless Aesthetic</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">We design for longevity, avoiding fleeting trends in favor of enduring style.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">VAISHNO<span>FURNITURE</span></a>
+                    <p>Bringing elegance and comfort to every home since 1995.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="products.html">Living Room</a></li>
+                        <li><a href="products.html">Bedroom</a></li>
+                        <li><a href="products.html">Dining Room</a></li>
+                        <li><a href="products.html">Workspace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="contact.html">Lanka, Varanasi, UP</a></li>
+                        <li><a href="mailto:contact@vaishnofurniture.com">contact@vaishno.com</a></li>
+                        <li><a href="tel:+911234567890">+91 123 456 7890</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vaishno Furniture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items-container">
+            <p style="text-align: center; color: var(--text-secondary); margin-top: 2rem;">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-filled" style="width: 100%;">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div id="payment-step-1">
+                <div class="modal-header">
+                    <h3>Secure Checkout</h3>
+                    <button id="close-payment">&times;</button>
+                </div>
+                <div class="payment-options">
+                    <div class="payment-method active" data-method="upi">
+                        <span>UPI / QR Code</span>
+                    </div>
+                    <div class="payment-method" data-method="card">
+                        <span>Debit / Credit Card</span>
+                    </div>
+                </div>
+                <div id="upi-section" class="payment-details">
+                    <div style="text-align: center;">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=vaishno@upi&pn=Vaishno%20Furniture&am=0" alt="UPI QR">
+                        <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.8rem;">Scan to pay using any UPI app</p>
+                    </div>
+                </div>
+                <button id="confirm-pay-btn" class="btn btn-filled" style="width: 100%; margin-top: 2rem;">Confirm Payment</button>
+            </div>
+            
+            <div id="payment-success" style="display: none; text-align: center; padding: 2rem;">
+                <div style="font-size: 4rem; color: #27ae60; margin-bottom: 1rem;">✓</div>
+                <h2>Order Placed!</h2>
+                <p style="color: var(--text-secondary); margin: 1rem 0 2rem;">Thank you for shopping with Vaishno Furniture. Your order ID is #VF-2026</p>
+                <button id="continue-shopping" class="btn btn-filled">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

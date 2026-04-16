@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishno Furniture | Premium Furniture Collection</title>
+    <meta name="description" content="Discover Vaishno Furniture's curated collection of premium furniture designed for comfort and elegance.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav id="main-nav">
+                <a href="index.html" class="logo">VAISHNO<span>FURNITURE</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-extra">
+                    <button id="cart-btn" class="icon-btn">🛒 <span id="cart-count">0</span></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="assets/hero.png" alt="Vaishno Furniture Display" class="hero-img">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Exceptional Design <br> For Modern Living</h1>
+                    <p>Experience the perfect harmony of craftsmanship and comfort. Discover our curated collection at Vaishno Furniture.</p>
+                    <div class="hero-btns">
+                        <a href="products.html" class="btn btn-filled">Explore Collection</a>
+                        <a href="about.html" class="btn">Our Philosophy</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding reveal">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 3rem; margin-bottom: 1rem;">The Featured Collection</h2>
+                    <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">A selection of our most iconic pieces, crafted with precision and passion.</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem;">
+                    <!-- Featured Product 1 -->
+                    <div class="product-card-real">
+                        <div class="product-img-container">
+                            <img src="assets/navy_sofa.jpg" alt="Royal Navy Sofa">
+                        </div>
+                        <div class="product-info">
+                            <span style="color: var(--accent); font-size: 0.7rem; letter-spacing: 2px;">ROYAL COLLECTION</span>
+                            <h3>Royal Navy Velvet Sofa</h3>
+                            <p>Exquisite vertical pleating and polished gold accents. A masterpiece of modern luxury.</p>
+                            <span class="price-tag">₹48,500</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Featured Product 2 -->
+                    <div class="product-card-real">
+                        <div class="product-img-container">
+                            <img src="assets/luxury_bed.jpg" alt="Luxury Bed">
+                        </div>
+                        <div class="product-info">
+                            <span style="color: var(--accent); font-size: 0.7rem; letter-spacing: 2px;">BEDROOM COLLECTION</span>
+                            <h3>Diamond Master Bed</h3>
+                            <p>Integrated side units and a grand tufted headboard. Designed for ultimate serenity.</p>
+                            <span class="price-tag">₹54,000</span>
+                        </div>
+                    </div>
+
+                     <!-- Featured Product 3 -->
+                     <div class="product-card-real">
+                        <div class="product-img-container">
+                            <img src="assets/teal_sectional.jpg" alt="Teal Sectional">
+                        </div>
+                        <div class="product-info">
+                            <span style="color: var(--accent); font-size: 0.7rem; letter-spacing: 2px;">MODERN COLLECTION</span>
+                            <h3>Ocean Teal L-Suite</h3>
+                            <p>Vibrant teal upholstery with gold-tipped legs. A bold and inviting statement.</p>
+                            <span class="price-tag">₹58,500</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 5rem;">
+                    <a href="products.html" class="btn">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding reveal" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: center;">
+                    <div>
+                        <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">Designed for the Soul</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 3rem;">We believe that furniture is more than just functional objects. They are the silent companions of our daily lives, influencing our mood and inspiring our creativity.</p>
+                        <a href="about.html" class="btn">Read Our Story</a>
+                    </div>
+                    <div>
+                        <img src="assets/about.png" alt="Design Process" style="border: 1px solid var(--glass-border);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding reveal">
+            <div class="container" style="text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 4rem;">What Our Clients Say</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                    <div style="padding: 3rem; background: var(--bg-secondary); border: 1px solid var(--glass-border);">
+                        <p style="font-style: italic; margin-bottom: 2rem;">"The attention to detail is staggering. Aura Loft has transformed my home into a sanctuary of peace."</p>
+                        <h4 style="color: var(--accent);">Eleanor Vance</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Interior Designer</span>
+                    </div>
+                    <div style="padding: 3rem; background: var(--bg-secondary); border: 1px solid var(--glass-border);">
+                        <p style="font-style: italic; margin-bottom: 2rem;">"Pure elegance. The minimalist approach combined with such rich materials is exactly what I was looking for."</p>
+                        <h4 style="color: var(--accent);">Marcus Thorne</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Architect</span>
+                    </div>
+                    <div style="padding: 3rem; background: var(--bg-secondary); border: 1px solid var(--glass-border);">
+                        <p style="font-style: italic; margin-bottom: 2rem;">"Their customer service is just as premium as their furniture. A truly exceptional experience."</p>
+                        <h4 style="color: var(--accent);">Sophia Rossi</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Luxury Concierge</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">VAISHNO<span>FURNITURE</span></a>
+                    <p>Bringing elegance and comfort to every home since 1995.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="products.html">Living Room</a></li>
+                        <li><a href="products.html">Bedroom</a></li>
+                        <li><a href="products.html">Dining Room</a></li>
+                        <li><a href="products.html">Workspace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="contact.html">Lanka, Varanasi, UP</a></li>
+                        <li><a href="mailto:contact@vaishnofurniture.com">contact@vaishno.com</a></li>
+                        <li><a href="tel:+911234567890">+91 123 456 7890</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vaishno Furniture. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Instagram</a>
+                    <a href="#">Pinterest</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items-container">
+            <!-- Items added via JS -->
+            <p style="text-align: center; color: var(--text-secondary); margin-top: 2rem;">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-filled" style="width: 100%;">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div id="payment-step-1">
+                <div class="modal-header">
+                    <h3>Secure Checkout</h3>
+                    <button id="close-payment">&times;</button>
+                </div>
+                <div class="payment-options">
+                    <div class="payment-method active" data-method="upi">
+                        <span>UPI / QR Code</span>
+                    </div>
+                    <div class="payment-method" data-method="card">
+                        <span>Debit / Credit Card</span>
+                    </div>
+                </div>
+                <div id="upi-section" class="payment-details">
+                    <div style="text-align: center;">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=vaishno@upi&pn=Vaishno%20Furniture&am=0" alt="UPI QR">
+                        <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.8rem;">Scan to pay using any UPI app</p>
+                    </div>
+                </div>
+                <button id="confirm-pay-btn" class="btn btn-filled" style="width: 100%; margin-top: 2rem;">Confirm Payment</button>
+            </div>
+            
+            <div id="payment-success" style="display: none; text-align: center; padding: 2rem;">
+                <div style="font-size: 4rem; color: #27ae60; margin-bottom: 1rem;">✓</div>
+                <h2>Order Placed!</h2>
+                <p style="color: var(--text-secondary); margin: 1rem 0 2rem;">Thank you for shopping with Vaishno Furniture. Your order ID is #VF-2026</p>
+                <button id="continue-shopping" class="btn btn-filled">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
